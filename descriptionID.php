@@ -20,7 +20,7 @@
   <!-- / Head -->
   <body>
 
-    <?php include 'include/navbar.php' ?>
+    <?php include 'views/navbar.php' ?>
 
     <!-- Header -->
     <header class="container-fluid img-header-descr">
@@ -69,10 +69,10 @@
     <!-- / Commentaire -->
 
     <!-- Liste Card (Dernier Article) -->
-    <?php include 'include/cardListNew.php' ?>
+    <?php include 'views/cardListNew.php' ?>
 
     <!-- Footer -->
-    <?php include 'include/footer.php' ?>
+    <?php include 'views/footer.php' ?>
 
     <!-- Import JS -->
     <!-- Jquery -->

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
-
 <head>
   <!-- Meta -->
   <meta charset="UTF-8" />
@@ -19,29 +18,29 @@
 
 <body>
 
-  <?php include 'include/navbarAdmin.php' ?>
+  <?php include 'views/navbarAdmin.php' ?>
 
   <!-- Collapse -->
   <div class="container mt-5 pt-4">
     <div class="accordion" id="accordionExample">
 
     <!-- Table Gestion des Articles -->
-    <?php include 'include/admin/tableArticle.php' ?>
+    <?php include 'views/admin/tableArticle.php' ?>
 
     <!-- Table Gestion des Users -->
-    <?php include 'include/admin/tableUser.php' ?>      
+    <?php include 'views/admin/tableUser.php' ?>      
 
     </div>
   </div>
   <!-- / Collapse -->
 
-  <?php include 'include/modals/modalEdit.php' ?>
+  <?php include 'views/modals/modalEdit.php' ?>
 
-  <?php include 'include/modals/modalDelete.php' ?>
+  <?php include 'views/modals/modalDelete.php' ?>
 
-  <?php include 'include/modals/modalLogout.php' ?>
+  <?php include 'views/modals/modalLogout.php' ?>
 
-  <?php include 'include/footer.php' ?>
+  <?php include 'views/footer.php' ?>
 
   <!-- Import JS -->
   <!-- Jquery -->

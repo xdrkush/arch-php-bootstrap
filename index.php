@@ -20,22 +20,22 @@
 <body>
 
   <!-- Navbar -->
-  <?php include 'include/navbar.php' ?>
+  <?php include 'views/navbar.php' ?>
 
   <!-- Header -->
-  <?php include 'include/header.php' ?>
+  <?php include 'views/header.php' ?>
 
   <!-- Liste de card (Dernier Article) -->
-  <?php include 'include/cardListNew.php' ?>
+  <?php include 'views/cardListNew.php' ?>
 
   <!-- Contact -->
-  <?php include 'include/contact.php' ?>
+  <?php include 'views/contact.php' ?>
 
   <!-- Footer -->
-  <?php include 'include/footer.php' ?>
+  <?php include 'views/footer.php' ?>
 
   <!-- Pop-up -->
-  <?php include 'include/other/popup.php' ?>
+  <?php include 'views/other/popup.php' ?>
 
   <!-- Import JS -->
   <!-- Jquery -->

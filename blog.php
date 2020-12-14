@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
   <!-- Head -->
   <head>
     <!-- Meta -->
@@ -22,7 +22,7 @@
 
   <body>
     <!-- NavBar -->
-    <?php include 'include/navbar.php' ?>
+    <?php include 'views/navbar.php' ?>
 
     <!-- SearchBar -->
     <div class="container mt-5">
@@ -38,10 +38,10 @@
     <!-- / SearchBar -->
 
     <!-- List de card (Article) -->
-    <?php include 'include/navbar.php' ?>
+    <?php include 'views/navbar.php' ?>
 
     <!-- Footer -->
-    <?php include 'include/footer.php' ?>
+    <?php include 'views/footer.php' ?>
 
     <!-- Import JS -->
     <!-- Jquery -->
