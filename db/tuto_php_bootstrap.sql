@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS `php_bootstrap` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+USE php_bootstrap;
+
+CREATE TABLE  `users` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 100 ) NOT NULL ,
+`email` VARCHAR( 100 ) NOT NULL ,
+`mobile` VARCHAR( 100 ) NOT NULL
+) ENGINE = INNODB;
