@@ -8,3 +8,10 @@ CREATE TABLE  `users` (
 `email` VARCHAR( 100 ) NOT NULL ,
 `mobile` VARCHAR( 100 ) NOT NULL
 ) ENGINE = INNODB;
+
+CREATE TABLE  `articles` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`title` VARCHAR( 20 ) NOT NULL ,
+`subtitle` VARCHAR( 100 ) NOT NULL ,
+`description` VARCHAR(255) NOT NULL
+) ENGINE = INNODB;

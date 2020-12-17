@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
+
 <head>
   <!-- Meta -->
   <meta charset="UTF-8" />
@@ -13,6 +14,11 @@
   <script src="https://kit.fontawesome.com/81855dfb83.js" crossorigin="anonymous"></script>
   <!-- Style Css -->
   <link rel="stylesheet" href="public/css/style.css" />
+  <!-- Jquery -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 </head>
 <!-- / Head -->
 
@@ -20,31 +26,37 @@
 
   <?php include 'views/navbarAdmin.php' ?>
 
+  <?php
+  // import de la connexion Connexion à la DB
+  include 'db/database.php';
+  // Appel de la class Database et de ça fontion connect()
+  $pdo = Database::connect();
+  ?>
+
   <!-- Collapse -->
   <div class="container mt-5 pt-4">
     <div class="accordion" id="accordionExample">
 
-    <!-- Table Gestion des Articles -->
-    <?php include 'views/admin/tableArticle.php' ?>
+      <!-- Table Gestion des Articles -->
+      <?php include 'views/admin/tableArticle.php' ?>
 
-    <!-- Table Gestion des Users -->
-    <?php include 'views/admin/tableUser.php' ?>      
+      <!-- Table Gestion des Users -->
+      <?php include 'views/admin/tableUser.php' ?>
 
     </div>
   </div>
   <!-- / Collapse -->
 
-  <?php include 'views/modals/modalEdit.php' ?>
-
-  <?php include 'views/modals/modalDelete.php' ?>
+  <?php
+  // Appel de la class Database et de ça fontion connect()
+  Database::disconnect();
+  ?>
 
   <?php include 'views/modals/modalLogout.php' ?>
 
   <?php include 'views/footer.php' ?>
 
   <!-- Import JS -->
-  <!-- Jquery -->
-  <script src="public/js/jquery.js"></script>
   <!-- Popper -->
   <script src="public/js/popper.js"></script>
   <!-- Bootstrap -->

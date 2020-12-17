@@ -2,12 +2,14 @@
     <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
+          
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal de connexion</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
           <div class="modal-body">
 
             <!-- Tabs (header) -->
@@ -115,12 +117,14 @@
               <!-- Mot de passe oublier -->
 
             </div>
+
             <div class="modal-footer">
               <div class="list-group">
                 <a class="list-group-item list-group-item-danger error">Erreur : Information érroné</a>
                 <a class="list-group-item list-group-item-success error">Success ! Vous êtes en attentes d'être confirmer par un admin</a>
               </div>
             </div>
+
           </div>
         </div>
       </div>

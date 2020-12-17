@@ -11,7 +11,7 @@
         // Appel de la class Database et de ça fontion connect()
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM users ORDER BY id DESC';
+        $sql = 'SELECT * FROM articles ORDER BY id DESC';
 
         foreach ($pdo->query($sql) as $row) {
           echo '<div class="card col-md-4 col-sm-12" style="max-width: 230px">';
@@ -19,9 +19,9 @@
           echo '<img src="/public/images/code-blue.jpg" class="card-img-top" alt="..." />';
           echo '</a>';
           echo '<div class="card-body">';
-          echo '<h5 class="card-title"> '. $row['name'] .' </h5>';
-          echo '<p class="card-text"> ' . $row['email'] . ' </p>';
-          echo '<p class="card-text"> ' . $row['mobile'] . ' </p>';
+          echo '<h5 class="card-title"> '. $row['title'] .' </h5>';
+          echo '<p class="card-text"> ' . $row['subtitle'] . ' </p>';
+          echo '<p class="card-text"> ' . $row['description'] . ' </p>';
           echo '</div>';
           echo '<div class="card-footer">';
           echo '<small class="text-muted">Last updated 3 mins ago</small>';
