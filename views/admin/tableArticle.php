@@ -10,7 +10,7 @@
                 </h2>
             </div>
             <div class="col-md-6 text-center">
-                <button class='btn btn-primary' data-target='#modalCreate' data-toggle="modal">create</button>
+                <button class='btn btn-primary' onclick='openModalCreate()' data-target='#modalCreateArticle' data-toggle="modal">create</button>
             </div>
         </div>
     </div>
@@ -20,34 +20,43 @@
                 <thead class="thead-dark">
                     <tr class="text-center">
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">title</th>
+                        <th scope="col">subtitle</th>
+                        <th scope="col">description</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    <?php
+                <?php
                     // Appel de la class Database et de ça fontion connect()
                     $pdo = Database::connect();
-
                     $sql = 'SELECT * FROM articles ORDER BY id DESC';
 
                     foreach ($pdo->query($sql) as $row) {
-                        echo '<tr class="text-center">';
-                        echo '<th scope="row">' . $row['id'] . '</th>';
-                        echo '<td> ' . $row['title'] . ' </td>';
-                        echo '<td> ' . $row['subtitle'] . ' </td>';
-                        echo '<td>';
-                        echo '<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEdit' . $row['id'] . '"><i class="far fa-edit"></i></button>';
-                        echo '<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalDelete' . $row['id'] . '"><i class="far fa-trash-alt"></i></button>';
-                        echo '</td>';
-                        echo '</tr>';
-                    }
+
+                    ?>
+
+                        <tr class="text-center">
+                            <th scope="row"> <?php echo $row['id'] ?> </th>
+                            <td><?php echo $row['title'] ?></td>
+                            <td><?php echo $row['subtitle'] ?></td>
+                            <td><?php echo $row['description'] ?></td>
+                            <td>
+                                <button data-target='#modalEditArticle' class="btn btn-warning btn-sm" data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-title="<?php echo $row['title'] ?>" data-subtitle="<?php echo $row['subtitle'] ?>" data-description="<?php echo $row['description'] ?>">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                                <button data-target='#modalDeleteArticle' class="btn btn-danger btn-sm" data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-title="<?php echo $row['title'] ?>">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                    <?php };
 
                     // Appel de la class Database et de ça fontion disconnect()
                     Database::disconnect();
-                    
+
                     ?>
 
                 </tbody>
@@ -57,8 +66,9 @@
 </div>
 <!-- / Gestion Articles -->
 
-
-<!-- Modal Edit & Delete -->
-<?php
-include './views/modals/modalCreate.php';
-?>
+  <!-- Modal Edit & Delete -->
+  <?php
+  include './views/modals/modalCreateArticle.php';
+  include './views/modals/modalEditArticle.php';
+  include './views/modals/modalDeleteArticle.php';
+  ?>

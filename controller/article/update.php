@@ -42,7 +42,7 @@ if (!empty($_POST)) {
         // update data
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE users  set title = ?, subtitle = ?, description =? WHERE id = ?";
+        $sql = "UPDATE articles  set title = ?, subtitle = ?, description =? WHERE id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($title, $subtitle, $description, $id));
         Database::disconnect();
@@ -52,7 +52,7 @@ if (!empty($_POST)) {
 } else {
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM users where id = ?";
+    $sql = "SELECT * FROM articles where id = ?";
     $q = $pdo->prepare($sql);
     $q->execute(array($id));
     $data = $q->fetch(PDO::FETCH_ASSOC);

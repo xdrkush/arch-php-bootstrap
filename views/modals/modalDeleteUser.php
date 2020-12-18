@@ -1,6 +1,6 @@
 
 <!-- Modal Delete -->
-<div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalDeleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content fetch-data">
      <!-- Content jquery -->
@@ -13,7 +13,7 @@
 <!-- Script -->
 <script>
     $(document).ready(function(event) {
-        $('#modalDelete').on('show.bs.modal', function(e) {
+        $('#modalDeleteUser').on('show.bs.modal', function(e) {
             var data = $(e.relatedTarget);
             var modal = $(this)
             var body = `

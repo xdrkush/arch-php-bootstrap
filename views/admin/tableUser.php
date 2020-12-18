@@ -40,13 +40,12 @@
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['mobile'] ?></td>
                             <td>
-                                <button data-target='#modalEdit' class="btn btn-warning btn-sm" data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-email="<?php echo $row['email'] ?>" data-mobile="<?php echo $row['mobile'] ?>">
+                                <button data-target='#modalEditUser' class="btn btn-warning btn-sm" data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-email="<?php echo $row['email'] ?>" data-mobile="<?php echo $row['mobile'] ?>">
                                     <i class="far fa-edit"></i>
                                 </button>
-                                <button data-target='#modalDelete' class="btn btn-danger btn-sm" data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-email="<?php echo $row['email'] ?>">
+                                <button data-target='#modalDeleteUser' class="btn btn-danger btn-sm" data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-email="<?php echo $row['email'] ?>">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
-
                             </td>
                         </tr>
 
@@ -67,6 +66,6 @@
 
 <!-- Modal Edit & Delete -->
 <?php
-include './views/modals/modalEdit.php';
-include './views/modals/modalDelete.php';
+include './views/modals/modalEditUser.php';
+include './views/modals/modalDeleteUser.php';
 ?>

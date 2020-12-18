@@ -15,10 +15,7 @@
   <!-- Style Css -->
   <link rel="stylesheet" href="public/css/style.css" />
   <!-- Jquery -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <!-- / Head -->
 
@@ -52,8 +49,10 @@
   Database::disconnect();
   ?>
 
+  <!-- Modal Logout -->
   <?php include 'views/modals/modalLogout.php' ?>
 
+  <!-- Footer -->
   <?php include 'views/footer.php' ?>
 
   <!-- Import JS -->
