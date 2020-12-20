@@ -2,7 +2,7 @@
     <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          
+
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal de connexion</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -34,7 +34,7 @@
                   <h3>Créé un compte Utilisateur</h3>
                 </div>
 
-                <form action="../../controller/user/create.php" method="POST" enctype="multipart/form-data">
+                <form action="./controller/user/create.php" method="POST" enctype="multipart/form-data">
                   <div class="row register-form" style="width: 100%">
 
                     <div class="form-group col-md-6 col-sm-12">
@@ -56,14 +56,15 @@
                       <label>Mot de passe :</label>
                       <input type="password" class="form-control" name="password" placeholder="Password *" value="" required />
                     </div>
-<!-- 
-                    <div class="form-group col-md-6 col-sm-12">
+                    <!-- <div class="form-group col-md-6 col-sm-12">
                       <label>Répéter mot de passe :</label>
                       <input type="password" class="form-control" name="password2" placeholder="Confirm Password *" value="" required>
                     </div> -->
 
                     <div class="form-group p-2 text-center col-md-12 col-sm-12">
-                      <input type="submit" class="btnRegister" value="Connexion" />
+                      <button type="submit" class='btn btn-primary' value="Connexion">
+                        Creer un compte
+                      </button>
                     </div>
 
                   </div>

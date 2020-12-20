@@ -49,9 +49,6 @@
   Database::disconnect();
   ?>
 
-  <!-- Modal Logout -->
-  <?php include 'views/modals/modalLogout.php' ?>
-
   <!-- Footer -->
   <?php include 'views/footer.php' ?>
 

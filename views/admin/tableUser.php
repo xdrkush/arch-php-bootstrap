@@ -39,6 +39,7 @@
                             <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['mobile'] ?></td>
+                            <td><?php echo $row['password'] ?></td>
                             <td>
                                 <button data-target='#modalEditUser' class="btn btn-warning btn-sm" data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-email="<?php echo $row['email'] ?>" data-mobile="<?php echo $row['mobile'] ?>">
                                     <i class="far fa-edit"></i>

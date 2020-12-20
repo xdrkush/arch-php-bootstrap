@@ -1,5 +1,6 @@
 <!-- Gestion Articles -->
 <div class="card">
+
     <div class="card-header" id="headingOne">
         <div class="row justify-around">
             <div class="col-md-6">
@@ -14,6 +15,7 @@
             </div>
         </div>
     </div>
+
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
             <table class="table">
@@ -28,7 +30,7 @@
                 </thead>
                 <tbody>
 
-                <?php
+                    <?php
                     // Appel de la class Database et de ça fontion connect()
                     $pdo = Database::connect();
                     $sql = 'SELECT * FROM articles ORDER BY id DESC';
@@ -63,12 +65,13 @@
             </table>
         </div>
     </div>
+    
 </div>
 <!-- / Gestion Articles -->
 
-  <!-- Modal Edit & Delete -->
-  <?php
-  include './views/modals/modalCreateArticle.php';
-  include './views/modals/modalEditArticle.php';
-  include './views/modals/modalDeleteArticle.php';
-  ?>
+<!-- Modal Edit & Delete -->
+<?php
+include './views/modals/modalCreateArticle.php';
+include './views/modals/modalEditArticle.php';
+include './views/modals/modalDeleteArticle.php';
+?>

@@ -8,11 +8,13 @@ if (!empty($_POST)) {
     $nameError = null;
     $emailError = null;
     $mobileError = null;
+    $passwordError = null;
 
     // On définit la valeur de nos variable au résultat de la method post
     $name = $_POST['name'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
+    $password = $_POST['password'];
 
     // On check nos variable input:
     $valid = true;
@@ -44,14 +46,21 @@ if (!empty($_POST)) {
         $valid = false;
     }
 
+    if (empty($password)) {
+        // variable de l'err
+        $passwordError = 'Please enter Password';
+        // si il n'y a pas de mobile alors
+        $valid = false;
+    }
+
     // Si tout est valid alors
     if ($valid) {
         // insert data
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO users (name,email,mobile) values(?, ?, ?)";
+        $sql = "INSERT INTO users (name,email,mobile,password) values(?, ?, ?)";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name, $email, $mobile));
+        $q->execute(array($name, $email, $mobile, $password));
         Database::disconnect();
         header("Location: ../../index.php");
     }

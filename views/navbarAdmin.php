@@ -19,8 +19,5 @@
     </nav>
     <!-- / NavBar -->
 
-    <!-- Modal Login -->
-    <?php include 'modals/modalLogin.php' ?>
-
     <!-- Modal Logout -->
     <?php include 'modals/modalLogout.php' ?>
