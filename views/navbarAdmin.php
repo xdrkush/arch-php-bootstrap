@@ -1,6 +1,6 @@
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg fixed-top border-bottom border-dark navbar-dark bg-dark px-3">
-        <a class="navbar-brand" href="#">Admin</a>
+        <a class="navbar-brand" href="#">Admin / <?php echo $_SESSION['name'] ?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

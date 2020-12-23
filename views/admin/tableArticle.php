@@ -1,3 +1,10 @@
+<!-- Modal Edit & Delete -->
+<?php
+include './views/modals/modalCreateArticle.php';
+include './views/modals/modalEditArticle.php';
+include './views/modals/modalDeleteArticle.php';
+?>
+
 <!-- Gestion Articles -->
 <div class="card">
 
@@ -11,7 +18,7 @@
                 </h2>
             </div>
             <div class="col-md-6 text-center">
-                <button class='btn btn-primary' onclick='openModalCreate()' data-target='#modalCreateArticle' data-toggle="modal">create</button>
+                <button class='btn btn-primary' data-target='#modalCreateArticle' data-toggle="modal">create</button>
             </div>
         </div>
     </div>
@@ -34,8 +41,9 @@
                     // Appel de la class Database et de ça fontion connect()
                     $pdo = Database::connect();
                     $sql = 'SELECT * FROM articles ORDER BY id DESC';
+                    $q = $pdo->query($sql);
 
-                    foreach ($pdo->query($sql) as $row) {
+                    foreach ( $q as $row) {
 
                     ?>
 
@@ -68,10 +76,3 @@
     
 </div>
 <!-- / Gestion Articles -->
-
-<!-- Modal Edit & Delete -->
-<?php
-include './views/modals/modalCreateArticle.php';
-include './views/modals/modalEditArticle.php';
-include './views/modals/modalDeleteArticle.php';
-?>

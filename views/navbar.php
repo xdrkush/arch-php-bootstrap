@@ -8,10 +8,6 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <!-- Lien Vers page Admin -->
-      <li class="nav-item">
-        <a class="nav-link" href="admin.php#">Admin</a>
-      </li>
       <!-- Lien Vers page Blog -->
       <li class="nav-item">
         <a class="nav-link" href="blog.php">Blog</a>
@@ -20,10 +16,25 @@
       <li class="nav-item">
         <a class="nav-link" href="index.php#contact">Contact</a>
       </li>
+
+      <?php if (!isset($_SESSION['name'])) { ?>
       <!-- Boutton modal de connexion -->
       <li class="nav-item">
         <a class="nav-link" data-toggle="modal" data-target="#modalLogin" href>Se Connecter</a>
       </li>
+
+      <?php } else { ?>
+      <!-- Lien Vers page Admin -->
+      <li class="nav-item">
+        <a class="nav-link" href="admin.php#">Admin</a>
+      </li>
+      <!-- Boutton de deconnexion -->
+      <li class="nav-item">
+        <a class="nav-link" href="/controller/user/logout.php">Se déconnecter</a>
+      </li>
+
+      <?php } ?>
+
     </ul>
   </div>
 </nav>

@@ -50,19 +50,42 @@ if (!empty($_POST)) {
         $valid = false;
     }
 
+    if ($_POST['isVerified'] === 'on') {
+        $isVerified = 1;
+    } else {
+        $isVerified = 0;
+    }
+    if ($_POST['isBan'] === 'on') {
+        $isBan = 1;
+    } else {
+        $isBan = 0;
+    }
+    if ($_POST['isModo'] === 'on') {
+        $isModo = 1;
+    } else {
+        $isModo = 0;
+    }
+    if ($_POST['isAdmin'] === 'on') {
+        $isAdmin = 1;
+    } else {
+        $isAdmin = 0;
+    }
+
     // Si tout est valid alors
     if ($valid) {
         // update data
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE users  set name = ?, email = ?, mobile =? WHERE id = ?";
+        $sql = "UPDATE users  set name = ?, email = ?, mobile = ?, isVerified = ?, isBan = ?, isAdmin = ?, isModo = ? WHERE id = ?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name, $email, $mobile, $id));
+        $q->execute(array($name, $email, $mobile, $id, $isVerified, $isBan, $isAdmin, $isModo));
         Database::disconnect();
-        header("Location: ../../admin.php");
+        // header("Location: ../../admin.php");
     }
-// Sinon on récupère les datas pour les afficher sur la page
+    // Sinon on récupère les datas pour les afficher sur la page
 } else {
+    echo "<script> console.log('PHP edit USER: not Valid') </script>";
+
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT * FROM users where id = ?";

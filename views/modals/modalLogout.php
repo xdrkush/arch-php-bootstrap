@@ -13,7 +13,10 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- Boutton de deconnexion -->
+        <li class="nav-item">
+          <a class="nav-link" href="/controller/user/logout.php">Se déconnecter</a>
+        </li>
       </div>
     </div>
   </div>

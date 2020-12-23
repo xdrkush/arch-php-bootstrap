@@ -3,35 +3,41 @@
       <div class="col-md-12 text-center">
         <h4>Les derniers articles</h4>
       </div>
-      <div class="card-group">
-
+      <div class='row'>
+        
         <?php
         // import de la connexion Connexion à la DB
         include 'db/database.php';
         // Appel de la class Database et de ça fontion connect()
         $pdo = Database::connect();
+        $i = 0;
 
         $sql = 'SELECT * FROM articles ORDER BY id DESC';
+        $q = $pdo->query($sql);
 
-        foreach ($pdo->query($sql) as $row) {
-          echo '<div class="card col-md-4 col-sm-12" style="max-width: 230px">';
-          echo '<a href="/descriptionID.php">';
-          echo '<img src="/public/images/code-blue.jpg" class="card-img-top" alt="..." />';
-          echo '</a>';
-          echo '<div class="card-body">';
-          echo '<h5 class="card-title"> '. $row['title'] .' </h5>';
-          echo '<p class="card-text"> ' . $row['subtitle'] . ' </p>';
-          echo '<p class="card-text"> ' . $row['description'] . ' </p>';
-          echo '</div>';
-          echo '<div class="card-footer">';
-          echo '<small class="text-muted">Last updated 3 mins ago</small>';
-          echo '</div>';
-          echo '</div>';
-        }
+        foreach ( $q as $row) {
+          if(++$i > 4) break;
+        ?>
 
+        <div class="card col-md-3 col-sm-12">
+          <a href="descriptionID.php">
+            <img src="/public/images/code-blue.jpg" class="card-img-top" alt="..." />
+          </a>
+          <div class="card-body">
+          <h5 class="card-title"> <?php echo $row['title'] ?> </h5>
+          <p class="card-title"> <?php echo $row['subtitle'] ?> </p>
+            <p class="card-text">
+              <?php echo $row['description'] ?>
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+
+        <?php }
         // Appel de la class Database et de ça fontion disconnect()
         Database::disconnect();
-
         ?>
 
         <!-- Card Example --

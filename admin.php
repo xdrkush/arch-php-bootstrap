@@ -1,3 +1,13 @@
+<?php
+session_start();
+echo ("<script>console.log('PHP: " . session_id() . "');</script>");
+
+if(!isset($_SESSION['name']))      // if there is no valid session
+{
+    header("Location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
@@ -29,6 +39,9 @@
   // Appel de la class Database et de ça fontion connect()
   $pdo = Database::connect();
   ?>
+
+  <!-- Emplacement sous la navbar -->
+  <div style='width: 7vh'></div>
 
   <!-- Collapse -->
   <div class="container mt-5 pt-4">

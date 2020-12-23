@@ -1,3 +1,4 @@
+
     <!-- Modal Se Connecter -->
     <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -34,7 +35,7 @@
                   <h3>Créé un compte Utilisateur</h3>
                 </div>
 
-                <form action="./controller/user/create.php" method="POST" enctype="multipart/form-data">
+                <form action="./controller/user/create.php" method="POST">
                   <div class="row register-form" style="width: 100%">
 
                     <div class="form-group col-md-6 col-sm-12">
@@ -76,7 +77,7 @@
               <!-- Se connecter -->
               <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <h3 class="register-heading">Se Connecter</h3>
-                <form action="/login/loginAuth" method="POST" enctype="multipart/form-data">
+                <form action="./controller/user/login.php" method="POST">
                   <div class="row register-form">
 
                     <div class="form-group col-md-6 col-sm-12">

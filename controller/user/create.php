@@ -53,14 +53,17 @@ if (!empty($_POST)) {
         $valid = false;
     }
 
+    // chiffrement du mot de passe
+    $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
     // Si tout est valid alors
     if ($valid) {
         // insert data
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO users (name,email,mobile,password) values(?, ?, ?)";
+        $sql = "INSERT INTO users (name,email,mobile,password) values(?, ?, ?, ?)";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name, $email, $mobile, $password));
+        $q->execute(array($name, $email, $mobile, $password_hash));
         Database::disconnect();
         header("Location: ../../index.php");
     }

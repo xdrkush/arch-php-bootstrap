@@ -19,14 +19,12 @@ class Database
   private static $cont  = null;
 
   // fonction d'erreur
-  public function __construct()
-  {
+  public function __construct() {
     die('Init function is not allowed');
   }
 
   // fonction de connexion
-  public static function connect()
-  {
+  public static function connect() {
     // Une connexion à travers toute l'application
     if (null == self::$cont) {
       // j'essaie
@@ -44,8 +42,7 @@ class Database
   }
 
   // la fonction pour ce déconnecter
-  public static function disconnect()
-  {
+  public static function disconnect() {
     // et on définit notre connexion sur null
     self::$cont = null;
   }
