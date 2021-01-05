@@ -29,7 +29,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Êtes-vous sur de vouloir éditer ${data.data('name')} ?</p>
+                    <p>Êtes-vous sur de vouloir éditer <u>${data.data('name')}  </u> ?</p>
                     <form action="./controller/user/update.php?id=${data.data('id')}" method='post'>
                         <div class="row">
                             <div class="form-group col-md-6">

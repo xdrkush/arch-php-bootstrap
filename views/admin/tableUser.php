@@ -50,22 +50,29 @@
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['mobile'] ?></td>
                             <td>
-                                <?php if ($row['isVerified'] === 1) {
-                                    echo 'fezfer';
+                                <?php if ($row['isVerified'] === "1") {
+                                    echo 'Vérifié';
                                 } ?>
                             </td>
                             <td class="row">
 
                                 <button data-target='#modalEditUser' class="btn btn-warning btn-sm col-6 col-md-6"
-                                    data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>"
-                                    data-email="<?php echo $row['email'] ?>" data-mobile="<?php echo $row['mobile'] ?>"
-                                    data-isVerified="<?php echo $row['isVerified'] ?>"  data-isBan="<?php echo $row['isBan'] ?>" 
-                                    data-isModo="<?php echo $row['isModo'] ?>"  data-isAdmin="<?php echo $row['isAdmin'] ?>"
+                                    data-toggle="modal"
+                                    data-id="<?php echo $row['id'] ?>"
+                                    data-name="<?php echo $row['name'] ?>"
+                                    data-email="<?php echo $row['email'] ?>"
+                                    data-mobile="<?php echo $row['mobile'] ?>"
+                                    data-isVerified="<?php echo $row['isVerified'] ?>"
+                                    data-isBan="<?php echo $row['isBan'] ?>" 
+                                    data-isModo="<?php echo $row['isModo'] ?>"
+                                    data-isAdmin="<?php echo $row['isAdmin'] ?>"
                                 >
                                     <i class="far fa-edit"></i>
                                 </button>
                                 <button data-target='#modalDeleteUser' class="btn btn-danger btn-sm col-6 col-md-6"
-                                    data-toggle="modal" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>"
+                                    data-toggle="modal"
+                                    data-id="<?php echo $row['id'] ?>"
+                                    data-name="<?php echo $row['name'] ?>"
                                     data-email="<?php echo $row['email'] ?>">
                                     <i class="far fa-trash-alt"></i>
                                 </button>

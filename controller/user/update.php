@@ -15,6 +15,7 @@ if (!empty($_GET['id'])) {
 // si il n'y a pas d'id
 if (null == $id) {
     // on redirige sur la page index.php
+    echo 'Une erreur est survenu !';
     header("Location: ../../admin.php");
 }
 
@@ -29,6 +30,10 @@ if (!empty($_POST)) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
+    $checkIsVerified = $_POST['isVerified'];
+    $checkIsBan = $_POST['isBan'];
+    $checkIsAdmin = $_POST['isAdmin'];
+    $checkIsModo = $_POST['isModo'];
 
     // On check nos variable input:
     $valid = true;
@@ -50,22 +55,22 @@ if (!empty($_POST)) {
         $valid = false;
     }
 
-    if ($_POST['isVerified'] === 'on') {
+    if ($checkIsVerified === "on") {
         $isVerified = 1;
     } else {
         $isVerified = 0;
     }
-    if ($_POST['isBan'] === 'on') {
+    if ($checkIsBan === "on") {
         $isBan = 1;
     } else {
         $isBan = 0;
     }
-    if ($_POST['isModo'] === 'on') {
+    if ($checkIsModo === "on") {
         $isModo = 1;
     } else {
         $isModo = 0;
     }
-    if ($_POST['isAdmin'] === 'on') {
+    if ($checkIsAdmin === "on") {
         $isAdmin = 1;
     } else {
         $isAdmin = 0;
